@@ -1,0 +1,198 @@
+<html><head>
+    <title>:: Parlay ::</title>
+    <link href="./portal.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script type="text/javascript" src="../../../Style/mGlobal.js?r=001"></script><link rel="stylesheet" href="/Style/layer/skin/default/layer.css?v=3.0.1.21110" id="layuicss-skinlayercss">
+    <script type="text/javascript" src="../../../Style/CGrid.js?r=001"></script>
+    <script type="text/javascript">
+        $(function () {
+            ajCode({
+                ACT: 'GetTT', lang: GetQueryStr('lang'), Id: GetQueryStr('id')
+            }, null, function (_db) { SetCVal("wfForm", _db[0]); $('#wfForm').show(); GetTT(_db[0]); GetShow(_db[1]); });
+        });
+
+        function GetTT(_db) {
+            $("#txtRefNo").attr("class", _db.LangClass);
+            $("#txtDateTime").attr("class", _db.LangClass);
+            $("#txtGameType").attr("class", _db.LangClass);
+            $("#txtBetAmount").attr("class", _db.LangClass);
+            $("#txtOdds").attr("class", _db.LangClass);
+            $("#txtEstPayout").attr("class", _db.LangClass);
+            $("#txtType").attr("class", _db.LangClass);
+            $("#txtGameTypes").attr("class", _db.LangClass);
+        }
+        function GetShow(_db) {
+            $("#tdserialNo").html(_db[2][0][0]);
+            $("#tddateTime").html(_db[2][0][1]);
+            $("#txtGameTypes").html(_db[2][0][2]);
+            $("#tdCombInfo").html(_db[2][0][3]);
+            $("#tdbetAmount").html(_db[2][0][5]);
+            $("#tdodds").html(_db[2][0][4]);
+            $("#tdpayout").html(_db[2][0][6]);
+            querystr = _db[2][0][7];
+            $("#tdstrTable").html(_db[2][0][8]);
+            $("#tdBranchCode").html(_db[2][0][9]);
+
+        }
+    </script>
+    <style>
+        .No2Show {
+            display: block;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 15px;
+            border-radius: 100%;
+        }
+
+
+        #tdstrTable > table {
+            width: 100%;
+            margin-top: 5px;
+            border-collapse: collapse;
+            --border: 1px solid black;
+            border-radius: 5px;
+            border-spacing: 0;
+            overflow: hidden;
+            border-bottom: 1px solid;
+            background-color: #c3dac1;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            #tdstrTable > table th:not(:last-child),
+            #tdstrTable > table td:not(:last-child) {
+                border-right: var(--border);
+                border: 1px solid #c3dac1;
+            }
+
+            #tdstrTable > table > tbody > tr:not(:last-child) > td,
+            #tdstrTable > table > tr:not(:last-child) > td,
+            #tdstrTable > table > tr:not(:last-child) > th,
+            #tdstrTable > table > tbody:not(:last-child) {
+                border-bottom: var(--border);
+                border: 1px solid #c3dac1;
+            }
+
+            #tdstrTable > table .GridHeader2 {
+                background-color: #194835 !important;
+                height: 25.5px;
+            }
+
+            table td, span {
+                font-family: Prompt !important;
+                font-size: 11px !important;
+                font-weight: normal;
+                font-stretch: normal !important;
+                font-style: normal;
+            }
+
+            #tdstrTable > table > tbody > tr:nth-child(odd) {
+                background-color: rgba(220, 243, 219);
+            }
+
+            #tdstrTable > table > tbody > tr:nth-child(even) {
+                background-color: rgba(232, 253, 234) !important;
+            }
+
+            #tdstrTable > table > tbody > tr > td {
+                padding: 3px 10px;
+            }
+    </style>
+</head>
+<body class="homeBg2">
+    <div id="wfForm" style="">
+        <table style="width: 100%;">
+            <tbody><tr>
+                <td>
+                    <table class="bold" cellspacing="0" cellpadding="0" style="padding: 5px 10px; width: 100%;">
+                        <tbody><tr>
+                            <td width="100">
+                                <span id="txtRefNo" class="gb">Ref No</span>
+                                :
+                            </td>
+                            <td id="tdserialNo">PAR1947137092</td>
+                        </tr>
+                        <tr>
+                            <td width="100">
+                                <span id="txtDateTime" class="gb">Date / Time</span>
+                                :
+                            </td>
+                            <td id="tddateTime">26/10 12:58:52 am</td>
+                        </tr>
+                        <tr>
+                            <td width="100">
+                                <span id="txtGameType" class="gb">Game Type</span>
+                                :
+                            </td>
+                            <td id="tdParlay">
+                                <span id="txtGameTypes" class="gb">PARLAY</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100">
+                                <span id="txtType" class="gb">Type</span>
+                                :
+                            </td>
+                            <td id="tdCombInfo">3 X 1</td>
+                        </tr>
+                        <tr>
+                            <td width="100">
+                                <span id="txtBetAmount" class="gb">Bet Amount</span>
+                                :
+                            </td>
+                            <td id="tdbetAmount">5&nbsp; * &nbsp;1&nbsp; = &nbsp;5</td>
+                        </tr>
+                        <tr>
+                            <td width="100">
+                                <span id="txtOdds" class="gb">Odds</span>
+                                :
+                            </td>
+                            <td id="tdodds">12.571</td>
+                        </tr>
+                        <tr>
+                            <td width="100">
+                                <span id="txtEstPayout" class="gb">Est. Payout</span>
+                                :
+                            </td>
+                            <td id="tdpayout">62.86</td>
+                        </tr>
+                        <tr>
+                            <td width="100">
+                                <span id="txtBranchCode">Branch Code</span>
+                                :
+                            </td>
+                            <td id="tdBranchCode">am@70schen888</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" id="tdstrTable"><table class="bold" cellspacing="0" cellpadding="3" border="1" width="515" style="border-color: Black; border-width: 1px; border-style: solid;border-collapse: collapse;"><tbody><tr class="GridHeader2"><td style="width:20px;">NO.</td><td style="width:20px;">NO.2</td><td style="width:300px;">Selection</td><td style="width:35px;">Odds</td><td style="width:80px;">Total Odds</td><td style="width:40px;">Stake</td><td style="width:40px;">Status</td></tr><tr><td align="center" style="height:25px" rowspan="3"><span>1</span></td><td align="center"><span class="No2Show">1</span></td><td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="bold"><tbody><tr><td><span class="gb">ENGLISH PREMIER LEAGUE</span></td></tr><tr><td><span class="gb">Leicester City -VS- Nottingham Forest&nbsp;<br>03:00AM<br>Result: -</span></td></tr><tr><td class="gb"><span class="gb">Type </span> :<span class="gb">ASIAN HANDICAP</span> &nbsp;&nbsp;&nbsp;<span class="gb">Odds&nbsp;: </span><span>2.70</span>&nbsp;&nbsp;<span></span></td></tr><tr><td><span class="gb">Bet </span> :&nbsp;<span class="gbGive2">Leicester City</span><br><span>-0-0.5 @2.70</span></td></tr></tbody></table></td><td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="bold"><tbody><tr><td align="center"><span>2.70</span></td></tr><tr><td><span></span></td></tr></tbody></table></td><td align="center" rowspan="3"><span>12.571</span></td><td align="center" rowspan="3"><span>5</span></td><td align="center"><span style="color:black;font-weight:bold;">Pending</span></td></tr><tr><td align="center"><span class="No2Show">2</span></td><td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="bold"><tbody><tr><td><span class="gb">SPAIN LA LIGA</span></td></tr><tr><td><span class="gb">RCD Espanyol -VS- Sevilla&nbsp;<br>03:00AM<br>Result: -</span></td></tr><tr><td class="gb"><span class="gb">Type </span> :<span class="gb">ASIAN HANDICAP</span> &nbsp;&nbsp;&nbsp;<span class="gb">Odds&nbsp;: </span><span>2.42</span>&nbsp;&nbsp;<span></span></td></tr><tr><td><span class="gb">Bet </span> :&nbsp;<span class="gbGive2">Sevilla</span><br><span>-0.5 @2.42</span></td></tr></tbody></table></td><td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="bold"><tbody><tr><td align="center"><span>2.42</span></td></tr><tr><td><span></span></td></tr></tbody></table></td><td align="center"><span style="color:black;font-weight:bold;">Pending</span></td></tr><tr><td align="center"><span class="No2Show">3</span></td><td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="bold"><tbody><tr><td><span class="gb">ITALY SERIE A</span></td></tr><tr><td><span class="gb">Torino -VS- Como&nbsp;<br>02:45AM<br>Result: -</span></td></tr><tr><td class="gb"><span class="gb">Type </span> :<span class="gb">ASIAN HANDICAP</span> &nbsp;&nbsp;&nbsp;<span class="gb">Odds&nbsp;: </span><span>2.23</span>&nbsp;&nbsp;<span></span></td></tr><tr><td><span class="gb">Bet </span> :&nbsp;<span class="gbGive2">Torino</span><br><span>-0-0.5 @2.23</span></td></tr></tbody></table></td><td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="bold"><tbody><tr><td align="center"><span>2.23</span></td></tr><tr><td><span></span></td></tr></tbody></table></td><td align="center"><span style="color:black;font-weight:bold;">Pending</span></td></tr></tbody></table></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="right">
+                                <a onclick="GetPamTransDetail();" title="Detail" style="color: black; font-size: 12px; font-weight: bold; font-style: italic; text-decoration: underline; cursor: pointer" runat="server"><span id="txtDetail" style="padding-right: 3px;">Detail</span></a>
+                                <script type="text/javascript">
+                                    function GetPamTransDetail() {
+                                        ChildWindow = window.open('../_norm/wfPamTransDetail0.html?' + querystr, '', 'width=620,height=620,top=200,left=400,toolbars=no,scrollbars=yes,status=no,resizable=yes')
+                                    }
+                                </script>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+
+
+</body></html>
